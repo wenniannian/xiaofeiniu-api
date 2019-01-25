@@ -9,11 +9,15 @@ use xiaofeiniu;
  
 # 在数据库中创建表格 管理员信息表 xfn_admin
 create table xfn_admin(
-    aid int primary key,  
+    aid int primary key auto_increment,  
     aname varchar(32) unique,
-    apwd varchar(64),
-    role 
+    apwd varchar(64)
 );
+
+insert into xfn_admin values
+(null,'admin',password("123456")),
+(null,'boss',password("999999"));
+
 #项目全局设置 xfn_settings
 create table xfn_settings(
     sid int primarykey, #编号
